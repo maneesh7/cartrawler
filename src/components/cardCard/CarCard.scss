@@ -1,0 +1,128 @@
+.card {
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid var(--global-border-color);
+  margin-bottom: 40px;
+
+  &:hover {
+    background-color: var(--global-ivory-color);
+  }
+
+  .details {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    .carImage {
+      img {
+        width: 250px;
+      }
+    }
+
+    .carDetails {
+      width: 40%;
+
+      .carInfo {
+        > div {
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 5px;
+          }
+        }
+
+        > * {
+          margin-bottom: 3px;
+        }
+      }
+    }
+
+    .priceSection {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      align-items: flex-end;
+      a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        width: 120px;
+        border-radius: 4px;
+        height: 36px;
+        color: var(--global-white-color);
+        padding: 4px;
+        background-color: var(--global-dodger-blue-color);
+
+        &:hover {
+          background-color: var(--global-primary-button-hover-color);
+        }
+      }
+
+      .amount {
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+  }
+  .reviewRow {
+    padding-top: 20px;
+    border-top: 1px solid var(--global-border-color);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+
+    > * {
+      margin: 0px 5px;
+    }
+
+    img {
+      height: 50px;
+    }
+
+    .rating {
+      display: flex;
+    }
+
+    .status {
+      font-size: 14px;
+      color: #105391;
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    .details {
+      flex-direction: column;
+      margin-bottom: 0px;
+
+      .carDetails {
+        width: 300px;
+
+        .carInfo {
+          display: flex;
+          justify-content: space-between;
+          > div {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .priceSection {
+        width: 330px;
+        flex-direction: row;
+        align-self: flex-start;
+        justify-content: space-between;
+        align-items: center;
+      }
+      > *:not(:first-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

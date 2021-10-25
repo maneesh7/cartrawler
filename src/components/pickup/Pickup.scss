@@ -1,0 +1,27 @@
+.pickupBox {
+  border-radius: 6px;
+  align-items: center;
+  border: 3px solid #a19816;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  svg {
+    color: cadetblue;
+  }
+  .pickup {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 6px;
+    > * {
+      margin: 5px;
+    }
+
+    .place {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}

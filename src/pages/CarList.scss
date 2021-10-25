@@ -1,0 +1,14 @@
+.carList {
+  width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .carList {
+    //   width: 60%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .carList {
+    //width: 90%;
+  }
+}

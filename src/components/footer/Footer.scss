@@ -1,0 +1,15 @@
+footer {
+  padding: 20px;
+  color: rgb(187, 180, 180);
+
+  background-color: #282828;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+  border: 1px solid var(--global-border-color);
+  text-align: justify;
+
+  > * {
+    min-width: 200px;
+  }
+}
