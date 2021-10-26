@@ -1,10 +1,10 @@
-import React from "react";
-import { useState } from "react";
-import "./FilterDropdown.scss";
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import { useGlobalContext } from "../../context";
-import useClickOutside from "../../hooks/useClickOutside";
-import { useRef } from "react";
+import React from 'react';
+import { useState } from 'react';
+import './FilterDropdown.scss';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import { useGlobalContext } from '../../context';
+import useClickOutside from '../../hooks/useClickOutside';
+import { useRef } from 'react';
 
 const FilterDropdown = () => {
   const LOW_TO_HIGH = 0;
@@ -12,7 +12,7 @@ const FilterDropdown = () => {
   const RECOMMENDED = 2;
 
   const [menuActive, setMenuActive] = useState(false);
-  const defaultMenuLabel = "Recommended";
+  const defaultMenuLabel = 'Recommended';
   const dropdownRef = useRef();
 
   useClickOutside(dropdownRef, () => {
@@ -20,7 +20,7 @@ const FilterDropdown = () => {
   });
 
   const [menuLabel, setMenuLabel] = useState(defaultMenuLabel);
-  const { setPriceFilter } = useGlobalContext();
+  const { searchFilter, setSearchFilter } = useGlobalContext();
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -30,23 +30,29 @@ const FilterDropdown = () => {
     setMenuActive(!menuActive);
     setMenuLabel(
       value === LOW_TO_HIGH
-        ? "Low to High"
+        ? 'Low to High'
         : value === HIGH_TO_LOW
-          ? "High to Low"
-          : value === RECOMMENDED
-            ? defaultMenuLabel
-            : defaultMenuLabel
+        ? 'High to Low'
+        : value === RECOMMENDED
+        ? defaultMenuLabel
+        : defaultMenuLabel
     );
-    setPriceFilter(value === HIGH_TO_LOW ? false : true);
+
+    console.log(value === HIGH_TO_LOW ? false : true);
+    //setPriceFilter(value === HIGH_TO_LOW ? false : true);
+    setSearchFilter({
+      ...searchFilter,
+      lowToHighPrice: value === HIGH_TO_LOW ? false : true,
+    });
   };
 
   return (
-    <div ref={dropdownRef} className={`dropdown ${menuActive ? "active" : ""}`}>
+    <div ref={dropdownRef} className={`dropdown ${menuActive ? 'active' : ''}`}>
       <button className="dropbtn" onClick={toggleMenu}>
         {menuLabel}
         <KeyboardArrowDownOutlinedIcon />
       </button>
-      <div className={`dropdown-content ${menuActive ? "active" : ""}`}>
+      <div className={`dropdown-content ${menuActive ? 'active' : ''}`}>
         <ul>
           <li onClick={() => handleClick(RECOMMENDED)}>Recommended</li>
           <li onClick={() => handleClick(LOW_TO_HIGH)}> Low to High</li>

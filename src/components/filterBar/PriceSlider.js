@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
-import { useGlobalContext } from "../../context";
-import { getCurrencySymbol } from "../../helpers";
+import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
+import { useGlobalContext } from '../../context';
+import { getCurrencySymbol } from '../../helpers';
 
 const PriceSlider = () => {
   const [value, setValue] = useState([10, 60]);
@@ -30,7 +30,7 @@ const PriceSlider = () => {
         {searchFilter.maxPrice}
       </div>
       <Slider
-        getAriaLabel={() => "Temperature range"}
+        getAriaLabel={() => 'Temperature range'}
         value={value}
         onChange={handleChange}
         valueLabelDisplay="off"

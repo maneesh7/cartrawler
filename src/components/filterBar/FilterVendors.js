@@ -1,8 +1,8 @@
-import React from "react";
-import vendors from "../../data/vendorsData";
-import { useGlobalContext } from "../../context";
-import CheckboxGroup from "../checkboxGroup/CheckboxGroup";
-import "./FilterVendors.scss";
+import React from 'react';
+import vendors from '../../data/vendorsData';
+import { useGlobalContext } from '../../context';
+import CheckboxGroup from '../checkboxGroup/CheckboxGroup';
+import './FilterVendors.scss';
 
 const FilterVendors = () => {
   const { searchFilter, setSearchFilter } = useGlobalContext();
@@ -13,6 +13,7 @@ const FilterVendors = () => {
       vendors: data,
     });
   };
+
   const ved = vendors.map((item) => {
     return { name: item.name, id: item.code, checked: false };
   });

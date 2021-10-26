@@ -1,9 +1,9 @@
-import React from "react";
-import "./FilterBar.scss";
-import Slider from "./PriceSlider";
-import FilterVendors from "./FilterVendors";
-import FilterTransmission from "./FilterTransmission";
-import { useGlobalContext } from "../../context";
+import React from 'react';
+import './FilterBar.scss';
+import Slider from './PriceSlider';
+import FilterVendors from './FilterVendors';
+import FilterTransmission from './FilterTransmission';
+import { useGlobalContext } from '../../context';
 
 const FilterBar = () => {
   const { clearAllFilter } = useGlobalContext();
@@ -26,4 +26,4 @@ const FilterBar = () => {
   );
 };
 
-export default FilterBar;
+export default React.memo(FilterBar);

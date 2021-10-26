@@ -14,6 +14,29 @@
     background-color: var(--global-border-color);
   }
 
+  .goBack {
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    a {
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 12px;
+      }
+
+      &:hover {
+        color: var(--global-anchor-link-hover-color);
+        text-decoration: underline;
+      }
+    }
+  }
+
   .details {
     display: flex;
     margin-bottom: 20px;

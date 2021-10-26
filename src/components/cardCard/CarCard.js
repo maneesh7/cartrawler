@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./CarCard.scss";
-import { getVendorLogo, getCurrencySymbol } from "../../helpers";
-import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
-import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
-import LocalGasStationOutlinedIcon from "@mui/icons-material/LocalGasStationOutlined";
-import SettingsInputSvideoOutlinedIcon from "@mui/icons-material/SettingsInputSvideoOutlined";
-import Rating from "../Rating";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './CarCard.scss';
+import { getVendorLogo, getCurrencySymbol } from '../../helpers';
+import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
+import LocalGasStationOutlinedIcon from '@mui/icons-material/LocalGasStationOutlined';
+import SettingsInputSvideoOutlinedIcon from '@mui/icons-material/SettingsInputSvideoOutlined';
+import Rating from '../Rating';
 const CarCard = ({
   id,
   image,

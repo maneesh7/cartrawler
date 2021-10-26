@@ -1,0 +1,19 @@
+.searchNow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+  a {
+    text-decoration: none;
+
+    h2 {
+      font-size: 3em;
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 2em;
+      }
+    }
+  }
+}

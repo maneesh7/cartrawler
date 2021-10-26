@@ -1,7 +1,7 @@
-import React from "react";
-import transmissionData from "../../data/transmissionData";
-import { useGlobalContext } from "../../context";
-import CheckboxGroup from "../checkboxGroup/CheckboxGroup";
+import React from 'react';
+import transmissionData from '../../data/transmissionData';
+import { useGlobalContext } from '../../context';
+import CheckboxGroup from '../checkboxGroup/CheckboxGroup';
 
 const FilterTransmission = () => {
   const { searchFilter, setSearchFilter } = useGlobalContext();

@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect, useReducer } from "react";
-import { useCallback } from "react";
-import getData from "./helpers/getData";
+import React, { useState, useContext, useEffect } from 'react';
+import { useCallback } from 'react';
+import getData from './helpers/getData';
 
 const AppContext = React.createContext();
 
@@ -10,13 +10,13 @@ export const defaultFilter = {
   lowToHighPrice: true,
   vendors: [],
   transmission: [100],
-  currencyCode: "CAD",
+  currencyCode: 'CAD',
 };
+
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const default_currency_code = "CAD";
+  const default_currency_code = 'CAD';
   const [searchFilter, setSearchFilter] = useState(defaultFilter);
-  const [priceFilter, setPriceFilter] = useState(true);
   const [carList, setCarList] = useState([]);
   const [pickupInfo, setPickupInfo] = useState({});
 
@@ -27,15 +27,6 @@ const AppProvider = ({ children }) => {
   const changeCurrency = (code) => {
     setSearchFilter({ ...searchFilter, currencyCode: code });
   };
-
-  useEffect(() => {
-    //  console.log("defaultFilter ", defaultFilter.vendors);
-    getCars();
-  }, [searchFilter]);
-
-  useEffect(() => {
-    setSearchFilter({ ...searchFilter, lowToHighPrice: priceFilter });
-  }, [priceFilter]);
 
   const getCars = useCallback(async () => {
     setLoading(true);
@@ -48,6 +39,10 @@ const AppProvider = ({ children }) => {
       setLoading(false);
     }
   }, [searchFilter]);
+
+  useEffect(() => {
+    getCars();
+  }, [searchFilter, getCars]);
 
   const getCarDetails = (id) => {
     if (carList.length === 0) {
@@ -69,8 +64,7 @@ const AppProvider = ({ children }) => {
         clearAllFilter,
         default_currency_code,
         changeCurrency,
-
-        setPriceFilter,
+        // setPriceFilter,
       }}
     >
       {children}

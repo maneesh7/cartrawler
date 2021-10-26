@@ -1,10 +1,10 @@
 const transmissionData = [
   {
-    name: "Automatic",
+    name: 'Automatic',
     id: 100,
   },
   {
-    name: "Manual",
+    name: 'Manual',
     id: 101,
   },
 ];

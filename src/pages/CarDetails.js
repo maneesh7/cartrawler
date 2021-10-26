@@ -1,20 +1,23 @@
-import React from "react";
-import "./CarDetails.scss";
-import { getVendorLogo, getCurrencySymbol } from "../helpers";
-import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
-import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
-import LocalGasStationOutlinedIcon from "@mui/icons-material/LocalGasStationOutlined";
-import SettingsInputSvideoOutlinedIcon from "@mui/icons-material/SettingsInputSvideoOutlined";
-import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
-import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
-import SensorDoorOutlinedIcon from "@mui/icons-material/SensorDoorOutlined";
-import AcUnitOutlinedIcon from "@mui/icons-material/AcUnitOutlined";
-import Rating from "../components/Rating";
-import { useParams } from "react-router-dom";
-import { useGlobalContext } from "../context";
-import Pickup from "../components/pickup/Pickup";
-import Loader from "../components/Loader";
-const CarDetails = ({}) => {
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './CarDetails.scss';
+import { getVendorLogo, getCurrencySymbol } from '../helpers';
+import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import LocalGasStationOutlinedIcon from '@mui/icons-material/LocalGasStationOutlined';
+import SettingsInputSvideoOutlinedIcon from '@mui/icons-material/SettingsInputSvideoOutlined';
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
+import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
+import SensorDoorOutlinedIcon from '@mui/icons-material/SensorDoorOutlined';
+import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
+import Rating from '../components/Rating';
+import { useParams } from 'react-router-dom';
+import { useGlobalContext } from '../context';
+import Pickup from '../components/pickup/Pickup';
+import Loader from '../components/Loader';
+
+const CarDetails = () => {
   const { id } = useParams();
 
   const { getCarDetails, loading } = useGlobalContext();
@@ -38,10 +41,17 @@ const CarDetails = ({}) => {
     fuelType,
     vendorData,
     doorCount,
-    airCondition
+    airCondition,
   } = getCarDetails(id)[0];
+
   return (
     <div className="car">
+      <div className="goBack">
+        <Link to={'/carList'} className="moreDetails" data-testid="moreDetails">
+          <ArrowBackIosNewIcon fontSize="small" />
+          Back
+        </Link>
+      </div>
       <Pickup />
       <h2>Your Trip</h2> <hr className="divider" />
       <h3>{carModel}</h3>
@@ -66,7 +76,7 @@ const CarDetails = ({}) => {
             </div>
             <div>
               <AcUnitOutlinedIcon />
-              AC {airCondition === "true" ? "Yes" : "No"}
+              AC {airCondition === 'true' ? 'Yes' : 'No'}
             </div>
 
             <div>
@@ -152,11 +162,11 @@ const CarDetails = ({}) => {
       </div>
       <div className="bookRow">
         <button className="book">
-          <span className="bookNow">Book Now</span>{" "}
+          <span className="bookNow">Book Now</span>
           <span> with Insurance (10% discount)</span>
         </button>
         <button className="book">
-          <span className="bookNow">Book Now</span>{" "}
+          <span className="bookNow">Book Now</span>
           <span> without Insurance</span>
         </button>
       </div>

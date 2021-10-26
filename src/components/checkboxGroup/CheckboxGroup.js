@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Checkbox from "@mui/material/Checkbox";
+import React, { useEffect, useState } from 'react';
+import Checkbox from '@mui/material/Checkbox';
 
 const CheckboxGroup = ({ data, handleData, selectedItem }) => {
   const [selectedCB, setSelectedCB] = useState(selectedItem);
@@ -8,8 +8,10 @@ const CheckboxGroup = ({ data, handleData, selectedItem }) => {
     const id = parseInt(event.target.value);
     if (event.target.checked) {
       setSelectedCB([...selectedCB, id]);
+      handleData([...selectedCB, id]);
     } else {
       setSelectedCB(selectedCB.filter((item) => item !== id));
+      handleData(selectedCB.filter((item) => item !== id));
     }
   };
 
@@ -17,16 +19,16 @@ const CheckboxGroup = ({ data, handleData, selectedItem }) => {
     return selectedItem.includes(id);
   };
 
-  useEffect(() => {
-    handleData(selectedCB);
-  }, [selectedCB]);
+  // useEffect(() => {
+  //   handleData(selectedCB);
+  // }, [selectedCB]);
 
   useEffect(() => {}, [data]);
 
   return (
     <div>
       {data.map((item, index) => {
-        const label = { inputProps: { "aria-label": item.name } };
+        const label = { inputProps: { 'aria-label': item.name } };
         return (
           <div key={index} className="checkBoxRow">
             <Checkbox
