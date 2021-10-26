@@ -15,7 +15,7 @@ import Rating from '../components/Rating';
 import { useParams } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 import Pickup from '../components/pickup/Pickup';
-import Loader from '../components/Loader';
+import Loader from '../components/loader/Loader';
 
 const CarDetails = () => {
   const { id } = useParams();

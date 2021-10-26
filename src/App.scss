@@ -1,16 +1,7 @@
 .app {
   display: flex;
   flex-direction: column;
-  height: 100%;
-
-  .detailPage {
-    width: 75vw;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-  }
+  height: 100vh;
 
   @media screen and (max-width: 680px) {
     .detailPage {

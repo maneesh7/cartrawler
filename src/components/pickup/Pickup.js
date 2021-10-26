@@ -31,7 +31,7 @@ function Pickup() {
         </div>
       </div>
 
-      <button>
+      <button onClick={() => alert('this feature is not implemented yet')}>
         <span>Edit Search</span>
       </button>
     </div>

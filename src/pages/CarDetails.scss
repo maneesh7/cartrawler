@@ -1,4 +1,10 @@
 .car {
+  width: 75vw;
+  padding: 20px 20px 0px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
   h2 {
     font-size: 28px;
     font-weight: 400;
@@ -156,6 +162,7 @@
   .bookRow {
     display: flex;
     justify-content: flex-end;
+    margin-top: 20px;
 
     .book:first-child {
       background-color: #3b9a2f;
@@ -185,6 +192,7 @@
 
 @media screen and (max-width: 1000px) {
   .car {
+    width: 80vw;
     .details {
       flex-direction: column;
       margin-bottom: 0px;
@@ -217,6 +225,7 @@
 }
 @media screen and (max-width: 650px) {
   .car {
+    width: 85vw;
     .details {
       .carDetails {
         width: 250px;

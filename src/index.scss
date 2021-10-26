@@ -1,5 +1,6 @@
 @import './styles-variables/global-color-vars.scss';
 @import './styles-variables/global-vars.scss';
+
 body {
   margin: 0;
   display: flex;
@@ -18,4 +19,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+html {
+  overflow-y: scroll;
 }

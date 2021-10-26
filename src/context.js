@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
   const getCars = useCallback(async () => {
     setLoading(true);
     try {
-      const { filteredCars, pickupData } = getData(searchFilter);
+      const { filteredCars, pickupData } = await getData(searchFilter);
       setPickupInfo(pickupData);
       setCarList(filteredCars);
       setLoading(false);

@@ -1,10 +1,10 @@
-import './App.scss'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Navbar from './components/header/NavBar'
-import CarList from './pages/CarList'
-import CarDetails from './pages/CarDetails'
-import Footer from './components/footer/Footer'
-import Home from './pages/Home'
+import './App.scss';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/header/NavBar';
+import CarList from './pages/CarList';
+import CarDetails from './pages/CarDetails';
+import Footer from './components/footer/Footer';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -21,9 +21,7 @@ function App() {
           </Route>
 
           <Route path="/car/:id">
-            <div className="detailPage">
-              <CarDetails />
-            </div>
+            <CarDetails />
           </Route>
           <Route path="*">
             <h2>oops!! page not found...</h2>
@@ -33,7 +31,7 @@ function App() {
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

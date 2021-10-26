@@ -1,15 +1,17 @@
 import data from '../data/data';
 import getVendorData from './getVendorData';
 import getConvertedCurrency from './getConvertedCurrency';
-const getTransmissionCode = (type) => {
-  if (type === 'Automatic') {
-    return 100;
-  }
-  return 101;
-};
-const getData = (searchFilter) => {
-  const { VehAvailRSCore } = data[0];
+import getTransmissionCode from './getTransmissionCode';
 
+const getDataFromCT = async () => {
+  const res = await fetch('http://www.cartrawler.com/ctabe/cars.json');
+  const dataFromUrl = await res.json();
+  return dataFromUrl[0];
+};
+
+const getData = async (searchFilter) => {
+  const mode = 1;
+  const { VehAvailRSCore } = mode === 0 ? data[0] : await getDataFromCT();
   const { VehRentalCore, VehVendorAvails: carVendorList } = VehAvailRSCore;
 
   const {
