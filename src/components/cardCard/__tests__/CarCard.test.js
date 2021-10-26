@@ -30,7 +30,7 @@ describe('Car Card', () => {
     },
   }));
 
-  it.only('validate Car Card Fields', () => {
+  it('validate Car Card Fields', () => {
     const { getByTestId } = render(
       <AppProvider value={null}>
         <Router>
@@ -52,7 +52,7 @@ describe('Car Card', () => {
     expect(fuelType).toHaveTextContent('Petrol');
   });
 
-  it.only('validate rating with half star', () => {
+  it('validate rating with half star', () => {
     const { getAllByTestId } = render(
       <AppProvider value={null}>
         <Router>
@@ -66,7 +66,7 @@ describe('Car Card', () => {
     expect(starHalfOutlinedIcon).toHaveLength(1);
   });
 
-  it.only('validate rating with 3 star', () => {
+  it('validate rating with 3 star', () => {
     const data = { ...carData, vendorData: { rating: 3 } };
     const { getAllByTestId } = render(
       <AppProvider value={null}>
