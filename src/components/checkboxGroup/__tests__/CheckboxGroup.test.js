@@ -6,26 +6,26 @@ import CheckboxGroup from '../CheckboxGroup';
 const testData = [
   {
     name: 'Test Data 1',
-    id: 101
+    id: 101,
   },
   {
     name: 'Test Data 2',
-    id: 102
-  }
+    id: 102,
+  },
 ];
 
-describe.only('Checkbox group', () => {
+describe('Checkbox group', () => {
   jest.mock('../../../context', () => ({
     __esModule: true,
     useGlobalContext: {
-      func: jest.fn()
+      func: jest.fn(),
     },
-    handleData: jest.fn()
+    handleData: jest.fn(),
   }));
 
   const handleChange = jest.fn();
 
-  it.only('verify checkboxes label', () => {
+  it('verify checkboxes label', () => {
     const { getByTestId } = render(
       <AppProvider value={null}>
         <CheckboxGroup
@@ -42,7 +42,7 @@ describe.only('Checkbox group', () => {
     expect(test_2).toHaveTextContent('Test Data 2');
   });
 
-  it.only('verify no checkbox is present when data is empty', () => {
+  it('verify no checkbox is present when data is empty', () => {
     const { queryAllByRole } = render(
       <AppProvider value={null}>
         <CheckboxGroup

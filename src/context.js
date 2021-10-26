@@ -54,17 +54,16 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        pickupInfo,
         loading,
         carList,
         searchFilter,
         setSearchFilter,
         setCarList,
-        pickupInfo,
         getCarDetails,
         clearAllFilter,
         default_currency_code,
         changeCurrency,
-        // setPriceFilter,
       }}
     >
       {children}
