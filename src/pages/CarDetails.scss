@@ -78,19 +78,6 @@
       flex-direction: column;
       align-self: flex-end;
       align-items: flex-end;
-      button {
-        width: 130px;
-        border-radius: 4px;
-        border: 0px;
-        height: 36px;
-        color: var(--global-white-color);
-        padding: 4px;
-        background-color: var(--global-dodger-blue-color);
-
-        &:hover {
-          background-color: #105391;
-        }
-      }
 
       .amount {
         font-size: 22px;
@@ -120,7 +107,7 @@
 
     .status {
       font-size: 14px;
-      color: #105391;
+      color: var(--global-dodger-blue-color);
       font-weight: 600;
     }
   }
@@ -165,7 +152,7 @@
     margin-top: 20px;
 
     .book:first-child {
-      background-color: #3b9a2f;
+      background-color: var(--global-la-palma-color);
       margin-right: 20px;
     }
 
