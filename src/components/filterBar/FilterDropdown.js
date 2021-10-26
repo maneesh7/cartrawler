@@ -39,7 +39,6 @@ const FilterDropdown = () => {
     );
 
     console.log(value === HIGH_TO_LOW ? false : true);
-    //setPriceFilter(value === HIGH_TO_LOW ? false : true);
     setSearchFilter({
       ...searchFilter,
       lowToHighPrice: value === HIGH_TO_LOW ? false : true,

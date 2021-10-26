@@ -6,6 +6,19 @@
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+  .filterBox {
+    width: 25%;
+    flex-direction: column;
+
+    .closeFilter {
+      display: flex;
+      margin: 10px;
+      align-items: center;
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
 
   .resultBox {
     display: flex;
@@ -35,23 +48,33 @@
       display: flex;
       justify-content: space-around;
     }
+
+    .filterRow {
+      display: flex;
+      margin-bottom: 10px;
+
+      .fullFilter {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--global-white-color);
+        padding: 16px 6px 16px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 160px;
+        border: 1px solid var(--global-border-color);
+
+        svg {
+          margin-left: 10px;
+        }
+      }
+    }
   }
   .carList {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .carList {
-    //   width: 60%;
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .carList {
-    //width: 90%;
-  }
-}
 @media screen and (max-width: 1200px) {
   .main {
     width: 90%;
@@ -60,8 +83,51 @@
 
 @media screen and (max-width: 680px) {
   .main {
+    .filterBox {
+      display: none;
+    }
     .resultBox {
       margin-left: 0;
+      .filterRow {
+        display: flex;
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: space-between;
+
+        .fullFilter {
+          display: flex;
+          width: 50%;
+        }
+
+        .dropdown {
+          width: 50%;
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .fullScreen {
+      width: 440px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      justify-content: center;
+      background-color: azure;
+
+      z-index: 9999;
+
+      .filterBar {
+        border: 1px solid #999;
+        display: block;
+        width: 380px;
+        margin-bottom: 20px;
+        box-shadow: 0px 1px 8px 0px rgb(0 0 0 / 20%);
+      }
     }
   }
 }
