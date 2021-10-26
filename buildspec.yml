@@ -1,0 +1,24 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Installing Node .... 
+      - curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+      - apt install -y nodejs
+      - echo Installing Yarn .... 
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+      - apt update && sudo apt install --no-install-recommends yarn
+  build:
+    commands:
+      - echo Installing dependencies.....
+      - yarn
+  post_build:
+    commands:
+      - echo Build completed on `date`
+# Include only the files required for your application to run.
+artifacts:
+  files:
+    - "**/*
+  discard-paths: no
+  base-directory: dist

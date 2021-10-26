@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './CarList.scss';
 import { useGlobalContext } from '../context';
 import CarCard from '../components/cardCard/CarCard';

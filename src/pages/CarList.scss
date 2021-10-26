@@ -9,15 +9,6 @@
   .filterBox {
     width: 25%;
     flex-direction: column;
-
-    .closeFilter {
-      display: flex;
-      margin: 10px;
-      align-items: center;
-      svg {
-        cursor: pointer;
-      }
-    }
   }
 
   .resultBox {
@@ -81,10 +72,27 @@
   }
 }
 
+@media screen and (min-width: 681px) {
+  .main {
+    .closeFilter {
+      display: none;
+    }
+  }
+}
+
 @media screen and (max-width: 680px) {
   .main {
     .filterBox {
       display: none;
+
+      .closeFilter {
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        svg {
+          cursor: pointer;
+        }
+      }
     }
     .resultBox {
       margin-left: 0;
@@ -109,8 +117,7 @@
     }
 
     .fullScreen {
-      width: 440px;
-      padding: 20px;
+      width: 100%;
       display: flex;
       align-items: center;
       position: absolute;
